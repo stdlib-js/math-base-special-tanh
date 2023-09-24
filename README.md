@@ -2,7 +2,7 @@
 
 @license Apache-2.0
 
-Copyright (c) 2018 The Stdlib Authors.
+Copyright (c) 2022 The Stdlib Authors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -18,25 +18,52 @@ limitations under the License.
 
 -->
 
+
+<details>
+  <summary>
+    About stdlib...
+  </summary>
+  <p>We believe in a future in which the web is a preferred environment for numerical computation. To help realize this future, we've built stdlib. stdlib is a standard library, with an emphasis on numerical and scientific computation, written in JavaScript (and C) for execution in browsers and in Node.js.</p>
+  <p>The library is fully decomposable, being architected in such a way that you can swap out and mix and match APIs and functionality to cater to your exact preferences and use cases.</p>
+  <p>When you use stdlib, you can be absolutely certain that you are using the most thorough, rigorous, well-written, studied, documented, tested, measured, and high-quality code out there.</p>
+  <p>To join us in bringing numerical computing to the web, get started by checking us out on <a href="https://github.com/stdlib-js/stdlib">GitHub</a>, and please consider <a href="https://opencollective.com/stdlib">financially supporting stdlib</a>. We greatly appreciate your continued support!</p>
+</details>
+
 # tanh
 
 [![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] <!-- [![dependencies][dependencies-image]][dependencies-url] -->
 
-> Compute the [hyperbolic tangent][hyperbolic-tangent] of a number.
+> Compute the [hyperbolic tangent][hyperbolic-tangent] of a double-precision floating-point number.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/math-base-special-tanh
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import tanh from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-tanh@deno/mod.js';
+var tanh = require( '@stdlib/math-base-special-tanh' );
 ```
 
 #### tanh( x )
 
-Computes the [hyperbolic tangent][hyperbolic-tangent] of `x`.
+Computes the [hyperbolic tangent][hyperbolic-tangent] of double-precision floating-point number `x`.
 
 ```javascript
 var v = tanh( 0.0 );
@@ -66,8 +93,8 @@ v = tanh( NaN );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import linspace from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-linspace@deno/mod.js';
-import tanh from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-tanh@deno/mod.js';
+var linspace = require( '@stdlib/array-base-linspace' );
+var tanh = require( '@stdlib/math-base-special-tanh' );
 
 var x = linspace( -4.0, 4.0, 100 );
 
@@ -81,6 +108,94 @@ for ( i = 0; i < x.length; i++ ) {
 
 <!-- /.examples -->
 
+<!-- C interface documentation. -->
+
+* * *
+
+<section class="c">
+
+## C APIs
+
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/math/base/special/tanh.h"
+```
+
+#### stdlib_base_tanh( x )
+
+Computes the [hyperbolic tangent][hyperbolic-tangent] of double-precision floating-point number `x`.
+
+```c
+double out = stdlib_base_tanh( 2.0 );
+// returns ~0.964
+
+out = stdlib_base_tanh( -2.0 );
+// returns ~-0.964
+```
+
+The function accepts the following arguments:
+
+-   **x**: `[in] double` input value.
+
+```c
+double stdlib_base_tanh( const double x );
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/math/base/special/tanh.h"
+#include <stdio.h>
+
+int main( void ) {
+    const double x[] = { -4.0, -3.11, -2.22, -1.33, -0.44, 0.44, 1.33, 2.22, 3.11, 4.0 };
+    
+    double v;
+    int i;
+    for ( i = 0; i < 10; i++ ) {
+        v = stdlib_base_tanh( x[ i ] );
+        printf( "tanh(%lf) = %lf\n", x[ i ], v );
+    }
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
+
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
 <section class="related">
@@ -89,9 +204,9 @@ for ( i = 0; i < x.length; i++ ) {
 
 ## See Also
 
--   <span class="package-name">[`@stdlib/math/base/special/cosh`][@stdlib/math/base/special/cosh]</span><span class="delimiter">: </span><span class="description">compute the hyperbolic cosine of a number.</span>
--   <span class="package-name">[`@stdlib/math/base/special/sinh`][@stdlib/math/base/special/sinh]</span><span class="delimiter">: </span><span class="description">compute the hyperbolic sine of a number.</span>
--   <span class="package-name">[`@stdlib/math/base/special/tan`][@stdlib/math/base/special/tan]</span><span class="delimiter">: </span><span class="description">evaluate the tangent of a number.</span>
+-   <span class="package-name">[`@stdlib/math-base/special/cosh`][@stdlib/math/base/special/cosh]</span><span class="delimiter">: </span><span class="description">compute the hyperbolic cosine of a number.</span>
+-   <span class="package-name">[`@stdlib/math-base/special/sinh`][@stdlib/math/base/special/sinh]</span><span class="delimiter">: </span><span class="description">compute the hyperbolic sine of a number.</span>
+-   <span class="package-name">[`@stdlib/math-base/special/tan`][@stdlib/math/base/special/tan]</span><span class="delimiter">: </span><span class="description">evaluate the tangent of a number.</span>
 
 </section>
 
@@ -106,7 +221,7 @@ for ( i = 0; i < x.length; i++ ) {
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -131,8 +246,8 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/math-base-special-tanh.svg
 [npm-url]: https://npmjs.org/package/@stdlib/math-base-special-tanh
 
-[test-image]: https://github.com/stdlib-js/math-base-special-tanh/actions/workflows/test.yml/badge.svg?branch=main
-[test-url]: https://github.com/stdlib-js/math-base-special-tanh/actions/workflows/test.yml?query=branch:main
+[test-image]: https://github.com/stdlib-js/math-base-special-tanh/actions/workflows/test.yml/badge.svg?branch=v0.1.0
+[test-url]: https://github.com/stdlib-js/math-base-special-tanh/actions/workflows/test.yml?query=branch:v0.1.0
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/math-base-special-tanh/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/math-base-special-tanh?branch=main
@@ -145,7 +260,7 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 -->
 
 [chat-image]: https://img.shields.io/gitter/room/stdlib-js/stdlib.svg
-[chat-url]: https://gitter.im/stdlib-js/stdlib/
+[chat-url]: https://app.gitter.im/#/room/#stdlib-js_stdlib:gitter.im
 
 [stdlib]: https://github.com/stdlib-js/stdlib
 
@@ -163,11 +278,11 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/math/base/special/cosh]: https://github.com/stdlib-js/math-base-special-cosh/tree/deno
+[@stdlib/math/base/special/cosh]: https://github.com/stdlib-js/math-base-special-cosh
 
-[@stdlib/math/base/special/sinh]: https://github.com/stdlib-js/math-base-special-sinh/tree/deno
+[@stdlib/math/base/special/sinh]: https://github.com/stdlib-js/math-base-special-sinh
 
-[@stdlib/math/base/special/tan]: https://github.com/stdlib-js/math-base-special-tan/tree/deno
+[@stdlib/math/base/special/tan]: https://github.com/stdlib-js/math-base-special-tan
 
 <!-- </related-links> -->
 
