@@ -35,43 +35,30 @@ limitations under the License.
 
 > Compute the [hyperbolic tangent][hyperbolic-tangent] of a double-precision floating-point number.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/math-base-special-tanh
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-tanh = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-tanh@umd/browser.js' )
-```
-The previous example will load the latest bundled code from the umd branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/math-base-special-tanh/tags). For example,
-
-```javascript
-tanh = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-tanh@v0.1.0-umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var tanh = require( 'path/to/vendor/umd/math-base-special-tanh/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-tanh@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.tanh;
-})();
-</script>
+var tanh = require( '@stdlib/math-base-special-tanh' );
 ```
 
 #### tanh( x )
@@ -105,14 +92,9 @@ v = tanh( NaN );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-base-linspace@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-tanh@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var linspace = require( '@stdlib/array-base-linspace' );
+var tanh = require( '@stdlib/math-base-special-tanh' );
 
 var x = linspace( -4.0, 4.0, 100 );
 
@@ -120,11 +102,6 @@ var i;
 for ( i = 0; i < x.length; i++ ) {
     console.log( tanh( x[ i ] ) );
 }
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -133,7 +110,91 @@ for ( i = 0; i < x.length; i++ ) {
 
 <!-- C interface documentation. -->
 
+* * *
 
+<section class="c">
+
+## C APIs
+
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/math/base/special/tanh.h"
+```
+
+#### stdlib_base_tanh( x )
+
+Computes the [hyperbolic tangent][hyperbolic-tangent] of double-precision floating-point number `x`.
+
+```c
+double out = stdlib_base_tanh( 2.0 );
+// returns ~0.964
+
+out = stdlib_base_tanh( -2.0 );
+// returns ~-0.964
+```
+
+The function accepts the following arguments:
+
+-   **x**: `[in] double` input value.
+
+```c
+double stdlib_base_tanh( const double x );
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/math/base/special/tanh.h"
+#include <stdio.h>
+
+int main( void ) {
+    const double x[] = { -4.0, -3.11, -2.22, -1.33, -0.44, 0.44, 1.33, 2.22, 3.11, 4.0 };
+    
+    double v;
+    int i;
+    for ( i = 0; i < 10; i++ ) {
+        v = stdlib_base_tanh( x[ i ] );
+        printf( "tanh(%lf) = %lf\n", x[ i ], v );
+    }
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -185,8 +246,8 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/math-base-special-tanh.svg
 [npm-url]: https://npmjs.org/package/@stdlib/math-base-special-tanh
 
-[test-image]: https://github.com/stdlib-js/math-base-special-tanh/actions/workflows/test.yml/badge.svg?branch=v0.1.0
-[test-url]: https://github.com/stdlib-js/math-base-special-tanh/actions/workflows/test.yml?query=branch:v0.1.0
+[test-image]: https://github.com/stdlib-js/math-base-special-tanh/actions/workflows/test.yml/badge.svg?branch=main
+[test-url]: https://github.com/stdlib-js/math-base-special-tanh/actions/workflows/test.yml?query=branch:main
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/math-base-special-tanh/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/math-base-special-tanh?branch=main
@@ -217,11 +278,11 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/math/base/special/cosh]: https://github.com/stdlib-js/math-base-special-cosh/tree/umd
+[@stdlib/math/base/special/cosh]: https://github.com/stdlib-js/math-base-special-cosh
 
-[@stdlib/math/base/special/sinh]: https://github.com/stdlib-js/math-base-special-sinh/tree/umd
+[@stdlib/math/base/special/sinh]: https://github.com/stdlib-js/math-base-special-sinh
 
-[@stdlib/math/base/special/tan]: https://github.com/stdlib-js/math-base-special-tan/tree/umd
+[@stdlib/math/base/special/tan]: https://github.com/stdlib-js/math-base-special-tan
 
 <!-- </related-links> -->
 
