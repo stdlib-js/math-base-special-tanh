@@ -42,7 +42,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import tanh from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-tanh@esm/index.mjs';
+import tanh from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-tanh@v0.2.3-esm/index.mjs';
 ```
 
 #### tanh( x )
@@ -83,7 +83,7 @@ v = tanh( NaN );
 <script type="module">
 
 import linspace from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-linspace@esm/index.mjs';
-import tanh from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-tanh@esm/index.mjs';
+import tanh from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-tanh@v0.2.3-esm/index.mjs';
 
 var x = linspace( -4.0, 4.0, 100 );
 
