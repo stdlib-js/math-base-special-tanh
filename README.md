@@ -42,6 +42,11 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import tanh from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-tanh@esm/index.mjs';
+```
+The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/math-base-special-tanh/tags). For example,
+
+```javascript
 import tanh from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-tanh@v0.2.4-esm/index.mjs';
 ```
 
@@ -84,7 +89,7 @@ v = tanh( NaN );
 
 import uniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-uniform@esm/index.mjs';
 import logEachMap from 'https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each-map@esm/index.mjs';
-import tanh from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-tanh@v0.2.4-esm/index.mjs';
+import tanh from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-tanh@esm/index.mjs';
 
 var opts = {
     'dtype': 'float64'
