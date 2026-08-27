@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-07-27)
+## Unreleased (2026-08-27)
 
 <section class="commits">
 
@@ -12,6 +12,7 @@
 
 <details>
 
+-   [`6989982`](https://github.com/stdlib-js/stdlib/commit/69899821b975f745bd5d69d01829cb52cd818ac9) - **docs:** add equations [(#14685)](https://github.com/stdlib-js/stdlib/pull/14685) _(by Karan Anand)_
 -   [`b0882ed`](https://github.com/stdlib-js/stdlib/commit/b0882edee7f41b0d899902e29da8b8d52d24f6a6) - **test:** migrate `math/base/special/tanh` to ULP-based testing [(#13652)](https://github.com/stdlib-js/stdlib/pull/13652) _(by Philipp Burckhardt)_
 -   [`39c4de7`](https://github.com/stdlib-js/stdlib/commit/39c4de75a25292c00909cda17a7cb055113e608e) - **bench:** refactor to use string interpolation in `math/base/special` [(#11390)](https://github.com/stdlib-js/stdlib/pull/11390) _(by Karan Anand)_
 
